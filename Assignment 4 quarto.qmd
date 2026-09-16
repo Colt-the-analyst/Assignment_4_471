@@ -1,0 +1,45 @@
+---
+title: "Assignment 4"
+author: "Colton Brewer"
+format: pdf
+editor: visual
+---
+
+```{r setup}
+#| echo: false
+# Setup
+
+# Clear the environment
+rm(list = ls())
+
+# Load the packages
+pacman::p_load(
+  tidyverse,
+  fpp2
+)
+
+# Load data to working directory
+data("ausbeer")
+```
+
+## Exercise 1
+
+## Exercise 2
+
+### 1.)
+
+The frequency of the ausbeer time series is `{r} frequency(ausbeer)` observations in each year, meaning that it's quarterly data. It runs from Q1 1956 to Q2 2010, which is confirmed in the package documentation. The frequency can also be seen in the time series plot below, as there is a clear seasonal pattern occurirng every 4 instances.
+
+```{r 2_1}
+# Time series line graph
+autoplot(ausbeer) + 
+  labs(
+    title = "Quarterly production",
+    x = "Quarter",
+    y = "Beer production"
+  )
+```
+
+### 2.)
+
+The series can be seen having a strong linear increasing trend with seasonal pattern until 1974. Beyond that, an ever so slightly decreasing trend follows, with more annual variations than before 1974. The long term trend is present, but it isn't consistent through this historical period, being an increase before a smaller decline starting around 1975.
